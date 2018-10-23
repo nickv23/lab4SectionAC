@@ -11,7 +11,7 @@ team.data <- read.csv("data/teams.csv", stringsAsFactors = FALSE)
 # View it, and get some basic information about the number of rows/columns. 
 # Note the "X" preceding some of the column titles as well as the "*" 
 # following the names of teams that made it to the playoffs that year.
-View(team.data)
+#View(team.data)
 
 
 # Add a column that gives the turnovers to steals ratio (TOV / STL) for each team
@@ -36,10 +36,18 @@ View(team.data)
 # Read in the Pokemon data from the data directory  
 # into a variable called `pokemon` using `read.csv`. Remember to not read strings in as factors.
 
+pokemon <- read.csv("data/Pokemon.csv", stringsAsFactors = FALSE)
+
 # First, View() the data set to see what info you have to work with 
 
+#View(pokemon)
 
 # Find all the Pokemon that are "Water" or "Ghost" Type 1 and have a speed higher than 50
+
+subgroup <- pokemon %>% 
+  filter(Type.1 == "Water" | Type.1 == "Ghost") %>% 
+  filter(Speed > 50)
+  
 
 # Find the average HP, median HP, min HP and max HP for each of the type of generations
 
